@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Git Ujarzmić Wersjonowanie</title>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width" />
+
+
+    <link href="https://fonts.googleapis.com/css?family=Fira+Sans:400,900&amp;subset=latin-ext" rel="stylesheet" />
+
+    <!-- Shower Theme -->
+    <link rel="stylesheet" href="vendors/shower-ribbon/styles/screen-16x9.css" />
+    <link rel="stylesheet" href="vendors/shower-CezaryWalenciuk/styles/main.css" />
+
+    <!-- Prism.js -->
+    <link rel="stylesheet" href="vendors/prism/prism.css" />
+    <link rel="stylesheet" href="vendors/prism/custom-prism.css" />
+</head>
+
+<body class="shower list">
+    <header class="caption">
+        <h1>Git Ujarzmić Wersjonowanie</h1>
+        <p></p>
+    </header>
+
+    <section class="slide front-page">
+
+        <div class="details">
+            <!-- 1. Avatar -->
+
+
+            <h2>Cezary Walenciuk</h2>
+
+            <!-- 3. Presentation title -->
+            <h2 class="bigbig"><strong style="font-size: 35px;  line-height: 1.3;">
+
+                    <span class="titlec1">Git</span>
+                    <span class="">Ujarzmić Wersjonowanie</span></strong></h2>
+
+
+
+            <!-- 5. Contact the speaker -->
+            <h2><a href="https://twitter.com/WalenciukC">@walenciukC</a></h2>
+        </div>
+        <div>
+
+
+            <!-- 2. Speaker -->
+
+        </div>
+        <div class="imag">
+            <img src="images/my-avatar.jpg" alt="Speaker">
+        </div>
+    </section>
+
+    <section class="slide happy">
+        <span class="shout colors">Dlaczego? Po co mi Git
+        </span>
+    </section>
+    <section class="slide  compact">
+        <h2>Wymiana plików (synchronizacja)</h2>
+        <ol>
+            <li class="next">Nie przez e-mail</li>
+            <li class="next">Nie przez Dropbox</li>
+            <li class="next">Nie przez Pendrive</li>
+        </ol>
+    </section>
+    <section class="slide purple">
+        <span class="shout colors">Musi być cywilizowany sposób</span>
+    </section>
+    <section class="slide  compact">
+        <h2>01 Wersjonowane repozytorium</h2>
+        <ol>
+            <li class="next">Maszyna czasu</li>
+            <li class="next">Przwrócisz dowolną wersję od początku do końca</li>
+        </ol>
+    </section>
+    <section class="slide  compact">
+        <h2>02 Zabezpiczenie</h2>
+        <ol>
+            <li class="next">Niczego nie zepsujesz</li>
+            <li class="next">Eksperymentujesz do woli</li>
+            <li class="next">Robisz co chcesz, bawisz się</li>
+        </ol>
+    </section>
+    <section class="slide  compact">
+        <h2>03 Historia</h2>
+        <ol>
+            <li class="next">Na poziomie każdej linijki</li>
+            <li class="next">Historia potrafi mówi więcej niż dokumentacja</li>
+            <li class="next">Możesz zobaczyć proces tworzenia każdej funkcji</li>
+        </ol>
+    </section>
+    <section class="slide  compact">
+        <h2>04 Ślad</h2>
+        <ol>
+            <li class="next">Historia decyzji</li>
+            <li class="next">Nie tylko dla Ciebie, ale dla innych</li>
+        </ol>
+    </section>
+    <section class="slide happy">
+        <span class="shout colors">Co warto wiedzieć?
+        </span>
+    </section>
+    <section class="slide  compact">
+        <h2>Dwa modele kontroli wersji</h2>
+        <ol>
+            <li class="next">Scentralizowany : SVN, TFS, CVS</li>
+            <li class="next">zDecentralizowany : GIT, Mercurial</li>
+        </ol>
+    </section>
+    <section class="slide purple">
+        <span class="shout colors">Skoro Git jest zDecentralizowany to nikt Ci nie powie, że JEGO repozytorium jest ważniejsze od innego
+        </span>
+    </section>
+    <section class="slide happy">
+        <span class="shout colors">Konfiguracja Git
+        </span>
+    </section>
+    <section class="slide  compact">
+        <h2>Kim jesteś : Operacje w Gicie są oznaczone danymi autora</h2>
+        <ol>
+            <li class="next">imię i nazwisko (albo : username)</li>
+            <li class="next">e-mail</li>
+        </ol>
+    </section>
+    <section class="slide  compact">
+        <h2>Username</h2>
+        <ol>
+            <li class="next">git config --global user.name "Cezary Walenicuk"</li>
+            <li class="next">git config --global user.email "email"</li>
+        </ol>
+    </section>
+    <section class="slide happy">
+        <span class="shout colors">Przygotowanie swojej konsoli do pracy
+        </span>
+    </section>
+    <section class="slide purple">
+        <span class="shout colors">Ja też bałem się konsoli i byłem przyczajony od małego do okienek
+        </span>
+    </section>
+    <section class="slide purple">
+        <span class="shout colors">Pamiętam jak kiedyś ktoś w 2016 roku robił prelekcję w której klepał cały czas
+            coś w konsoli i ja na to : CO ?
+        </span>
+    </section>
+    <section class="slide purple">
+        <span class="shout colors">A gdzie jest moje UI do tego?
+        </span>
+    </section>
+    <section class="slide  compact">
+        <h2>Obawy przed konsolą</h2>
+        <ol>
+            <li class="next">🤨 trzeba dużo pisać</li>
+            <li class="next">🤨 nie zapamiętam wszytkich komend</li>
+            <li class="next">🤨 nie będę produktywny</li>
+        </ol>
+    </section>
+    <section class="slide happy">
+        <span class="shout colors">Przygotowanie swojej konsoli do pracy. DEMO
+        </span>
+    </section>
+    <section class="slide purple">
+        <span class="shout colors">A co się stanie jak uruchomie przypadkiem Vim
+        </span>
+    </section>
+    <section class="slide purple">
+        <span class="shout colors">Proste zamkasz Vim poprzez restart komputera
+        </span>
+    </section>
+    
+    <section class="slide" style="background-color:black">
+        <figure>
+            <img class="cover" src="pictures/00.png" alt="blog">
+            <figcaption class="white">Copyright © Cezary Walenciuk</figcaption>
+        </figure>
+    </section>
+    <section class="slide" style="background-color:black">
+        <figure>
+            <img class="cover" src="pictures/9.png" alt="blog">
+            <figcaption class="white">Copyright © Cezary Walenciuk</figcaption>
+        </figure>
+    </section>
+    <section class="slide  compact">
+        <h2>Jak pozbyć się Vima?</h2>
+        <ol>
+            <li class="next">git config --global core.editor notepad</li>
+            <li class="next">Dla Mack : git config --global core.editor "open -W -n"</li>
+            <li class="next">Przywrócenie : git config --global core.editor emacs</li>
+            <li class="next">Przywrócenie : git config --global --unset core.editor</li>
+            
+        </ol>
+    </section>
+    <section class="slide  compact">
+        <h2>Jak pozbyć się Vima?</h2>
+        <ol>
+            <li class="next">git config --global merge.tool winmerge</li>
+            <li class="next">Przywrócenie : git config --global --unset merge.tool</li>
+        </ol>
+    </section>
+    <section class="slide  compact">
+        <h2>Jak pozbyć się Vima?</h2>
+        <ol>
+            <li class="next">git config --global diff.tool winmerge</li>
+            <li class="next">Przywrócenie : git config --global --unset diff.tool</li>
+        </ol>
+    </section>
+
+    <section class="slide happy">
+        <span class="shout colors">Jak przygotować konsolę
+        </span>
+    </section>
+    <section class="slide happy">
+        <span class="shout colors">Cmder i WindowsTerminal
+        </span>
+    </section>
+    <section class="slide happy">
+        <span class="shout colors">Demo : git init
+        </span>
+    </section>
+    <section class="slide  compact">
+        <h2>Trzy stany pliku</h2>
+        <ol>
+            <li class="next">Comitted czyli żyje już w repozytorium</li>
+            <li class="next">Modified czyli jest w folderze,pliku zmiana</li>
+            <li class="next">Staged czyli przygotowanie do Commit</li>
+        </ol>
+    </section>
+    <section class="slide" style="background-color:black">
+        <figure>
+            <img class="cover" src="pictures/01.png" alt="blog">
+            <figcaption class="white">Copyright © Cezary Walenciuk</figcaption>
+        </figure>
+    </section>
+    <section class="slide" style="background-color:black">
+        <figure>
+            <img class="cover" src="pictures/02.png" alt="blog">
+            <figcaption class="white">Copyright © Cezary Walenciuk</figcaption>
+        </figure>
+    </section>
+    <section class="slide" style="background-color:black">
+        <figure>
+            <img class="cover" src="pictures/03.png" alt="blog">
+            <figcaption class="white">Copyright © Cezary Walenciuk</figcaption>
+        </figure>
+    </section>
+
+    <section class="slide" style="background-color:black">
+        <figure>
+            <img class="cover" src="pictures/04.png" alt="blog">
+            <figcaption class="white">Copyright © Cezary Walenciuk</figcaption>
+        </figure>
+    </section>
+
+    <section class="slide" style="background-color:black">
+        <figure>
+            <img class="cover" src="pictures/05.png" alt="blog">
+            <figcaption class="white">Copyright © Cezary Walenciuk</figcaption>
+        </figure>
+    </section>
+    <section class="slide" style="background-color:black">
+        <figure>
+            <img class="cover" src="pictures/6.png" alt="blog">
+            <figcaption class="white">Copyright © Cezary Walenciuk</figcaption>
+        </figure>
+    </section>
+    <section class="slide" style="background-color:black">
+        <figure>
+            <img class="cover" src="pictures/7.png" alt="blog">
+            <figcaption class="white">Copyright © Cezary Walenciuk</figcaption>
+        </figure>
+    </section>
+    <section class="slide purple">
+        <span class="shout colors">Dobre praktyki
+        </span>
+    </section>
+    <section class="slide" style="background-color:black">
+        <figure>
+            <img class="cover" src="pictures/8.png" alt="blog">
+            <figcaption class="white">Copyright © Cezary Walenciuk</figcaption>
+        </figure>
+    </section>
+    <section class="slide purple">
+        <span class="shout colors">Ignorowanie plików<br />.gitignore
+        </span>
+    </section>
+    <section class="slide purple">
+        <span class="shout colors">Commit tylko części pliku <br />git add -i
+        </span>
+    </section>
+    <section class="slide purple">
+        <span class="shout colors">Cofanie swoich zmiań
+        </span>
+    </section>
+    <section class="slide purple">
+        <span class="shout colors">A gdzie jest GitHub?
+        </span>
+    </section>
+    <section class="slide purple">
+        <span class="shout colors">Dlaczego GitHub?
+        </span>
+    </section>
+    <section class="slide purple">
+        <span class="shout colors">Demo : clone od zera
+        </span>
+    </section>
+    <section class="slide purple">
+        <span class="shout colors">Demo : wrzucenie swoich zmian
+        </span>
+    </section>
+    <section class="slide purple">
+        <span class="shout colors">Demo : pull request
+        </span>
+    </section>
+    <section class="slide purple">
+        <span class="shout colors">5 minut na wasze pytania
+        </span>
+    </section>
+    <section class="slide" style="background-color:black">
+        <figure>
+            <img class="cover" src="pictures/0.png" alt="blog">
+            <figcaption class="white">Copyright © Cezary Walenciuk</figcaption>
+        </figure>
+    </section>
+
+<!-- 
+
+    <section class="slide  compact">
+        <h2>Zalety TDD : </h2>
+        <ol>
+            <li class="next">TDD wymusza na tobie modularność</li>
+            <li class="next">Co jeśli baza danych nie jest gotowa? Co jeśli WEB API nie jest gotowe?</li>
+            <li class="next">Przy każdej zmianie kodu możesz sprawdzić czy czegoś nie rozwaliłeś</li>
+            <li class="next">Testy stają się dokumentacja kodu</li>
+        </ol>
+    </section>
+    <section class="slide  compact">
+        <h2>Zalety TDD : </h2>
+        <ol>
+            <li class="next">Unikasz przeinżeniorowania</li>
+            <li class="next">Fajnie by było gydby każda aplikacja Legacy miała testy</li>
+        </ol>
+    </section>
+
+    <!-- <section class="slide ">
+        <span class="shout colors">Zbieranie<br><span class="yellow">wymagań</span>
+        </span>
+    </section> 
+
+    <section class="slide ">
+        <span class="shout colors">Cykl: <br> &nbsp;<span class="red"> RED </span>&nbsp;
+        <span class="green">GREEN</span>&nbsp;
+        <span class="blue">REFACTOR</span> 
+    </span>
+        </span>
+    </section>
+
+    <section class="slide orange">
+        <span class="shout colors">DEMO: live coding</span>
+    </section>
+
+
+    <section class="slide  compact">
+        <h2>AntyWzorce TDD: </h2>
+        <ol>
+            <li class="next">Zależność pomiędzy testami</li>
+            <li class="next">Testowanie detali implementacyjnych</li>
+            <li class="next">Powolne testy</li>
+        </ol>
+    </section>
+    <section class="slide  compact">
+        <h2>Ograniczenia TDD: </h2>
+        <ol>
+            <li class="next">Możliwe dziury w testach</li>
+            <li class="next">TDD w samo sobie nie jest wystarczające</li>
+        </ol>
+    </section>
+    <section class="slide  compact">
+        <h2>Aby mieć pewność, że wszystko jest w porządku, z twoją aplikacją musisz także</h2>
+        <ol>
+            <li class="next">Sprawdzać proces wdrażania samej aplikacji na serwer lub na chmurę</li>
+            <li class="next">Patrzyć na zmiany w sieci?</li>
+            <li class="next">Mieć testy integracyjne, czyli całościowe</li>
+        </ol>
+    </section>
+    <section class="slide ">
+        <span class="shout colors"><span class="blue2">Ograniczenia TDD:</span><br>
+        <span class="yellow">Potrzeba wsparcia zarządu i innych programistów</span>
+        </span>
+    </section>
+    <section class="slide  compact">
+        <h2>Pytania o TDD: </h2>
+        <ol>
+            <li class="next">Czy Agile jest wymagany do TDD?</li>
+            <li class="next">Czy naprawdę muszę pisać testy najpierw?</li>
+        </ol>
+    </section>
+    <section class="slide orange">
+        <span class="shout colors">DEMO : Entity Framework i ASP.NET CORE</span>
+    </section>
+
+    <section class="slide  compact">
+        <h2>Frameworki Unit Test: </h2>
+        <ol>
+            <li class="next">MSTest</li>
+            <li class="next">NUnit</li>
+            <li class="next">xUnit</li>
+        </ol>
+    </section>
+    <section class="slide orange">
+        <span class="shout colors">DEMO</span>
+    </section>
+
+    <section class="slide orange">
+        <span class="shout colors">Czy można pisanie testów zautomatyzować?</span>
+    </section>
+    <section class="slide orange">
+        <span class="shout colors">AutoFixture</span>
+    </section>
+    <section class="slide orange">
+        <span class="shout colors">DEMO</span>
+    </section> -->
+
+<!--
+    <section class="slide  compact">
+        <h2>Z TDD istnieje wiele pokrewnych tematów jak: </h2>
+        <ol>
+            <li class="next">Agile Development</li>
+            <li class="next">Refactoring </li>
+            <li class="next">Continuous Integration</li>
+            <li class="next">Continuous Deployment</li>
+        </ol>
+    </section>
+
+    <section class="slide" style="background-color:black">
+        <figure>
+            <img class="cover" src="pictures/02.png" alt="blog">
+            <figcaption class="white">Copyright © 2019 Diagram</figcaption>
+        </figure>
+    </section>
+    <section class="slide" style="background-color:black">
+        <figure>
+            <img class="cover" src="pictures/01.jpg" alt="blog">
+            <figcaption class="white">Copyright © 2019 Paczki Nuget</figcaption>
+        </figure>
+    </section>
+    <section class="slide" style="background-color:black">
+        <figure>
+            <img class="cover" src="pictures/03.png" alt="blog">
+            <figcaption class="white">Copyright © 2019 Paczki Nuget</figcaption>
+        </figure>
+    </section>
+    </section>
+    <section class="slide ">
+        <span class="shout colors">Pokaż mi <span class="blue">tabelki</span> i pokaż mi <span
+                class="yellow">klasy</span></span>
+        </span>
+    </section>
+    <section class="slide happy">
+        <span class="shout colors">Demo
+        </span>
+    </section>
+    <section class="slide ">
+        <span class="shout colors">Po co nam backend , czyli o <br><span class="yellow">ASP.NET CORE 3.1</span>
+        </span>
+    </section>
+    <section class="slide" style="background-color:black">
+        <figure>
+            <img class="cover" src="pictures/04_1.png" alt="blog">
+            <figcaption class="white">Copyright © 2019 Paczki Nuget</figcaption>
+        </figure>
+    </section>
+    <section class="slide ">
+        <span class="shout colors">Nazywamy to <br><span class="yellow">MVC</span></span>
+   
+    </section>
+    <section class="slide" style="background-color:black">
+        <figure>
+            <img class="cover" src="pictures/05.png" alt="blog">
+            <figcaption class="white">Copyright © 2019 Paczki Nuget</figcaption>
+        </figure>
+    </section>
+    <section class="slide ">
+        <span class="shout colors">Nazywamy to <br><span class="yellow">Single Page Application</span></span>
+   
+    </section>
+    <section class="slide ">
+        <span class="shout colors">Czy to można zrobić w <span class="blue">C#?</span></span>
+    </section>
+    <section class="slide" style="background-color:black">
+        <figure>
+            <img class="cover" src="pictures/06.png" alt="blog">
+            <figcaption class="white">Copyright © 2019 Paczki Nuget</figcaption>
+        </figure>
+    </section>
+    <section class="slide happy ">
+        <span class="shout colors"><span class="blue">Blazor</span> to framework <br>Single-page Application 
+            w którym możesz pisać w <span class="yellow">C#</span> po stronie przeglądarki</span>
+
+    </section>
+    <section class="slide compact ">
+        <h2>Dwa style tworzenia aplikacji : </h2>
+        <ol>
+            <li class="next">Blazor WebAssembly</li>
+            <li class="next">Blazor Server</li>            
+
+        </ol>
+    </section>
+    <section class="slide" style="background-color:black">
+        <figure>
+            <img class="cover" src="pictures/09.png" alt="blog">
+            <figcaption class="white">Copyright © 2019 Paczki Nuget</figcaption>
+        </figure>
+    </section>
+    <section class="slide  compact">
+        <h2>Zalety Blazor WebAssembly : </h2>
+        <ol>
+            <li class="next">Prawie działanie natywne</li>
+            <li class="next">Może działać offline</li>
+            <li class="next">Nie potrzeba serwera</li>
+            <li class="next">Używa zasobów klienta</li>
+        </ol>
+    </section>
+    <section class="slide compact ">
+        <h2>Wady Blazor WebAssembly: </h2>
+        <ol>
+            <li class="next">Im więcej do pobierania tym wolniej to działa</li>
+            <li class="next">WebAssembly jest wymagane</li>
+        </ol>
+    </section>
+    <section class="slide" style="background-color:black">
+        <figure>
+            <img class="cover" src="pictures/10.png" alt="blog">
+            <figcaption class="white">Copyright © 2019 Paczki Nuget</figcaption>
+        </figure>
+    </section>
+    <section class="slide  compact">
+        <h2>Zalety Blazor Server: </h2>
+        <ol>
+            <li class="next">Niewiele do pobierania</li>
+            <li class="next">Pełen .NET Framework</li>
+            <li class="next">WebAssembly nie jest porzebne</li>
+        </ol>
+    </section>
+    <section class="slide  compact">
+        <h2>Wady Blazor Server: </h2>
+        <ol>
+            <li class="next">Brak wsparcia offline</li>
+            <li class="next">Potrzebny serwer</li>
+            <li class="next">Wolniejsza aplikacja</li>
+        </ol>
+    </section>
+    <section class="slide happy">
+        <span class="shout colors">Pokaż mi jak <br> Blazor WebAssembly działa</span>
+   
+    </section>
+
+    <section class="slide orange">
+        <span class="shout colors">Nie bójcie się programowować </span>
+   
+    </section> -->
+    <!-- <section class="slide compact" id="3">
+        <h2>Slide Header</h2>
+
+        <p>Echo Park 8-bit sustainable umami deep v Kickstarter. DIY cliche typewriter brunch, Odd Future sriracha pickled aesthetic. Farm-to-table bespoke fingerstache, kale chips umami brunch letterpress.</p>
+        <p>Whatever authentic disrupt, you probably haven't heard of them direct trade mlkshk Etsy. Gluten-free roof party plaid four loko quinoa.</p>
+        <p class="note">Echo Park 8-bit sustainable umami deep v Kickstarter.</p>
+    </section> -->
+<!-- 
+    <section class="slide compact" id="4">
+        <h2>Inline Elements</h2>
+
+        <p>Retro meh brunch <a href="">aesthetic</a> Cosby sweater Shoreditch. Banksy Tumblr
+            <strong>sriracha</strong>, flexitarian pug chia master cleanse vinyl
+            <em>wayfarers</em> fanny pack bespoke Helvetica <b>roof</b> party. Messenger bag retro cred
+            <i>Portland</i> next level. Yr stumptown Schlitz Carles deep v small batch. Hella sustainable messenger bag,
+            <mark>leggings</mark>
+            skateboard literally<sup>1</sup> bicycle rights H<sub>2</sub>0 mumblecore banh mi DIY VHS. Semiotics four
+            loko street art asymmetrical. Asymmetrical
+            <code>&lt;paleo&gt;</code> you probably haven’t heard of.
+        </p>
+
+        <footer class="footer">
+            <p>Retro meh brunch <a href="">aesthetic</a> Cosby sweater Shoreditch. Banksy Tumblr
+                <strong>sriracha</strong>, flexitarian pug chia master cleanse vinyl
+                <em>wayfarers</em> fanny pack bespoke Helvetica <b>roof</b> party. Messenger bag retro cred
+                <i>Portland</i> next level. Yr stumptown Schlitz Carles deep v small batch. Hella sustainable messenger
+                bag,
+                <mark>leggings</mark>
+                skateboard literally<sup>1</sup> bicycle rights H<sub>2</sub>0 mumblecore banh mi DIY VHS. Semiotics
+                four loko street art asymmetrical. Asymmetrical
+                <code>&lt;paleo&gt;</code> you probably haven’t heard of.
+            </p>
+        </footer>
+    </section>
+
+    <section class="slide compact" id="5">
+        <h2>Columns</h2>
+        <p class="double">Echo Park 8-bit sustainable umami deep v Kickstarter. DIY cliche typewriter brunch, Odd Future
+            sriracha pickled aesthetic. Farm-to-table bespoke fingerstache, kale chips umami brunch American Apparel
+            letterpress. Whatever authentic disrupt, you probably haven't heard of them direct trade mlkshk Etsy.
+            Gluten-free roof party plaid American Apparel four loko quinoa. Echo Park 8-bit sustainable.</p>
+    </section>
+
+    <section class="slide" id="6">
+        <h2>Quotes</h2>
+        <blockquote>
+            <p>Flannel bicycle rights locavore selfies skateboard. Authentic fanny pack paleo four loko bespoke. Artisan
+                tattooed chia XOXO ennui, lomo disrupt 8-bit art party Tumblr scenester.</p>
+        </blockquote>
+        <figure>
+            <blockquote>
+                <p>Post-ironic fashion axe flexitarian, Tonx narwhal messenger bag Tumblr. Portland gentrify deep v kale
+                    chips literally.</p>
+            </blockquote>
+            <figcaption>Yours Truly</figcaption>
+        </figure>
+    </section>
+
+    <section class="slide compact" id="7">
+        <h2>Nested Lists</h2>
+        <ol>
+            <li>Literally viral vegan, ugh drinking vinegar photo booth</li>
+            <li>Wes Anderson chillwave Marfa pour-over Etsy banh mi</li>
+            <li>Ethnic polaroid lo-fi iPhone ennui
+                <ul>
+                    <li>Yr wayfarers before they sold out Kickstarter asymmetrical</li>
+                    <li>Irony flexitarian readymade quinoa, kogi bespoke meggings narwhal</li>
+                    <li>Skateboard Etsy twee artisan Echo Park</li>
+                </ul>
+            </li>
+            <li>Tonx kitsch fingerstache readymade, retro single-origin coffee</li>
+        </ol>
+    </section>
+
+    <section class="slide compact" id="8">
+        <h2>Simple Table</h2>
+        <table>
+            <tbody>
+                <tr>
+                    <th scope="col">Gentrify</th>
+                    <th>Twee</th>
+                    <th>Artisan</th>
+                    <th>Banksy</th>
+                </tr>
+                <tr>
+                    <th scope="row">Messenger</th>
+                    <td>Mixtape</td>
+                    <td>Small batch</td>
+                    <td>Bicycle rights</td>
+                </tr>
+                <tr>
+                    <th scope="row">Meggings</th>
+                    <td>Freegan</td>
+                    <td>Retro biodiesel</td>
+                    <td>Slow-carb</td>
+                </tr>
+                <tr>
+                    <th scope="row">Vegan</th>
+                    <td>Occupy</td>
+                    <td>Normcore</td>
+                    <td>Put a bird on it</td>
+                </tr>
+                <tr>
+                    <th scope="row">Next level</th>
+                    <td>Selfies</td>
+                    <td>Sustainable</td>
+                    <td>Organic</td>
+                </tr>
+                <tr>
+                    <th scope="row">Umami</th>
+                    <td>Asymmetrical</td>
+                    <td>Keytar</td>
+                    <td>Craft beer</td>
+                </tr>
+                <tr>
+                    <th scope="row">Biodiesel</th>
+                    <td>Haven’t heard</td>
+                    <td>Skateboard</td>
+                    <td>Farm-to-table</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section class="slide compact" id="9">
+        <h2>Striped Table</h2>
+        <table class="striped">
+            <tbody>
+                <tr>
+                    <th scope="col">Gentrify</th>
+                    <th>Twee</th>
+                    <th>Artisan</th>
+                    <th>Banksy</th>
+                </tr>
+                <tr>
+                    <th scope="row">Messenger</th>
+                    <td>Mixtape</td>
+                    <td>Small batch</td>
+                    <td>Bicycle rights</td>
+                </tr>
+                <tr>
+                    <th scope="row">Meggings</th>
+                    <td>Freegan</td>
+                    <td>Retro biodiesel</td>
+                    <td>Slow-carb</td>
+                </tr>
+                <tr>
+                    <th scope="row">Vegan</th>
+                    <td>Occupy</td>
+                    <td>Normcore</td>
+                    <td>Put a bird on it</td>
+                </tr>
+                <tr>
+                    <th scope="row">Next level</th>
+                    <td>Selfies</td>
+                    <td>Sustainable</td>
+                    <td>Organic</td>
+                </tr>
+                <tr>
+                    <th scope="row">Umami</th>
+                    <td>Asymmetrical</td>
+                    <td>Keytar</td>
+                    <td>Craft beer</td>
+                </tr>
+                <tr>
+                    <th scope="row">Biodiesel</th>
+                    <td>Haven’t heard</td>
+                    <td>Skateboard</td>
+                    <td>Farm-to-table</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section class="slide prism" id="10">
+        <h2>Listing Slide</h2>
+
+        <pre style="font-size: 45px;"
+            class=" line-numbers language-javascript"><code class=" language-javascript"><span class="token keyword">function</span> <span class="token function">wrap</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token keyword">return</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		<span class="token keyword">return</span> value<span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">function</span> <span class="token function">bind</span><span class="token punctuation">(</span>monad<span class="token punctuation">,</span> f<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token keyword">return</span> <span class="token function">f</span><span class="token punctuation">(</span><span class="token function">monad</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+    </section>
+
+    <section class="slide prism" id="11">
+        <pre style="font-size: 30px;"
+            class=" line-numbers language-javascript"><code class=" language-javascript"><span class="token keyword">var</span> monad <span class="token operator">=</span> <span class="token function">wrap</span><span class="token punctuation">(</span><span class="token string">'cookie'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">bind</span><span class="token punctuation">(</span>monad<span class="token punctuation">,</span> <span class="token punctuation">(</span>value<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
+	console<span class="token punctuation">.</span><span class="token function">info</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token keyword">return</span> <span class="token function">wrap</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+monad <span class="token operator">=</span> <span class="token function">bind</span><span class="token punctuation">(</span>monad<span class="token punctuation">,</span> <span class="token punctuation">(</span>value<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
+	<span class="token keyword">return</span> <span class="token function">wrap</span><span class="token punctuation">(</span><span class="token punctuation">{</span> type<span class="token punctuation">:</span> value <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">bind</span><span class="token punctuation">(</span>monad<span class="token punctuation">,</span> <span class="token punctuation">(</span>value<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
+	console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token keyword">return</span> <span class="token function">wrap</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+    </section>
+
+    <section class="slide" id="12">
+        <h2 class="shout"><a href="">Linked</a> Shout</h2>
+    </section>
+
+    <section class="slide" id="13">
+        <h2 class="shout grow">Effect: Growing Shout</h2>
+    </section>
+
+    <section class="slide" id="14">
+        <h2 class="shout shrink">Effect: Shrinking Shout</h2>
+    </section>
+
+    <section class="slide" id="15">
+        <figure>
+            <img class="cover" src="vendors/shower-ribbon/pictures/exact.png" alt="">
+            <figcaption class="white">Copyright © 2016 <a href="">Yours Truly</a>, Famous Inc.</figcaption>
+        </figure>
+    </section>
+
+    <section class="slide" id="16">
+        <img class="cover" src="vendors/shower-ribbon/pictures/tall.png" alt="">
+    </section>
+
+    <section class="slide" id="17">
+        <img class="cover" src="vendors/shower-ribbon/pictures/wide.png" alt="">
+    </section>
+
+    <section class="slide white" id="18">
+        <img class="place top left" src="vendors/shower-ribbon/pictures/square.png" alt="">
+        <img class="place top" src="vendors/shower-ribbon/pictures/square.png" alt="">
+        <img class="place top right" src="vendors/shower-ribbon/pictures/square.png" alt="">
+
+        <img class="place left" src="vendors/shower-ribbon/pictures/square.png" alt="">
+        <img class="place" src="vendors/shower-ribbon/pictures/square.png" alt="">
+        <img class="place right" src="vendors/shower-ribbon/pictures/square.png" alt="">
+
+        <img class="place bottom left" src="vendors/shower-ribbon/pictures/square.png" alt="">
+        <img class="place bottom" src="vendors/shower-ribbon/pictures/square.png" alt="">
+        <img class="place bottom right" src="vendors/shower-ribbon/pictures/square.png" alt="">
+    </section>
+
+    <section class="slide" data-timing="00:03" id="19">
+        <h3 class="shout">Automatic switch slide after <strong>3 secs</strong> ...</h3>
+    </section>
+
+    <section class="slide" id="20">
+        <img class="cover" src="images/gifs/example-gif.gif" width="480" height="360" alt="">
+    </section>
+
+   
+    <div class="progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"
+        aria-valuetext="Slideshow Progress: 0%" style="width: 0%;"></div> -->
+
+
+
+
+    <div class="progress"></div>
+
+
+
+    <footer class="badge badge-top-left">
+        <a href="#" class="fullscreen">Fullscreen</a>
+    </footer>
+
+    <script src="vendors/gamepad/gamepad.js"></script>
+    <script src="vendors/shower/shower.min.js"></script>
+    <script src="vendors/shower-gamepad/shower.gamepad.js"></script>
+    <script src="vendors/shower-warsawjs/scripts/fullscreen.js"></script>
+
+    <!-- Prism.js -->
+    <script src="vendors/prism/prism.js"></script>
+    <script src="vendors/prism/custom-prism.js"></script>
+</body>
+
+</html>
